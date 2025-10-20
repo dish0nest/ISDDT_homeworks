@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#Отделение логики вычисления статистики
 function statistic()
 {
  total=$(( $1 + $2 ))
@@ -7,19 +8,27 @@ function statistic()
  echo "========================================================================="
 }
 
+# Подсвечивание текста
 RED='\e[31m'
 GREEN='\e[32m'
 RESET='\e[0m'
 
+# Переменные для хранения информации о:
+# 1) О шаге
+# 2) О количестве удачных попыток
+# 3) О количестве неудачных попыток
 count=1
 all_hits=0
 all_misses=0
-while [[ $number != q ]]
+
+# Цикл для ввода данных
+while true
 do
   echo "Step: $count"
   guess=$(( 0 + $RANDOM % 10 ))
   read -p "Enter a number (0-9) or q for quit: " number
 
+  # Case для проверки ввода
   case $number in
     [0-9])
         if [ $number -eq $guess ]
