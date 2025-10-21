@@ -93,7 +93,6 @@ trap cleanup SIGINT
 declare -a history
 number=''
 guess=$(generate)
-echo $guess
 step=1
 
 while true
