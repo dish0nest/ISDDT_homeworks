@@ -1,6 +1,5 @@
 #!/bin/bash
 
-#Отделение логики вычисления статистики
 function statistic()
 {
  local total=$(( $1 + $2 ))
@@ -14,7 +13,7 @@ function statistic()
  echo -n "Numbers: "
  for num in "${last[@]}"
  do
-  echo -ne "$num "               # -n чтобы не переводить строку, -e чтобы интерпретировать цвета
+  echo -ne "$num "
  done
  echo ""
  echo "========================================================================="
