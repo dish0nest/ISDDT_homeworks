@@ -111,7 +111,7 @@ function move_disk()
 
 function win() {
     local stack_name=$1
-    local expected=(3 2 1)
+    local expected=(8 7 6 5 4 3 2 1)
     local -a current=()
 
     case $stack_name in
@@ -138,7 +138,7 @@ function win() {
     fi
 }
 
-declare -a A=(3 2 1)
+declare -a A=(8 7 6 5 4 3 2 1)
 declare -a B=()
 declare -a C=()
 moves=1
