@@ -47,7 +47,9 @@ then
     exit 0
 fi
 
-for key in "${!suffixes[@]}"
+for key in "${!suffixes[@]}"; do
+    echo -e "${suffixes[$key]}\t$key"
+done | sort -rn | while IFS=$'\t' read -r count key;
 do
-    echo "$key: ${suffixes[$key]}"
+    echo "$key: $count"
 done
