@@ -27,6 +27,13 @@ for file in "$dir"/*.txt
 do
     if [ -f "$file" ]
     then
-        sed -i "1i$text" "$file"
+        tmp=$(mktemp)
+
+        {
+            echo "$text"
+            cat "$file"
+        } > "$tmp"
+
+        mv "$tmp" "$file"
     fi
 done
